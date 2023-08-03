@@ -5,7 +5,7 @@ const {errorHandler,notFound} = require("./middlewares/errorHandler");
 const dbConnect = require("./config/dbConnect");
 const dotenv = require("dotenv").config();
 const PORT = process.env.PORT || 4000;
-const authRouter = require("./routes/authRoute");
+const authRouter = require("./routes/authRouter");
 
 dbConnect();
 app.use(bodyParser.json());
