@@ -47,12 +47,7 @@ const getUser = asyncHandler(async(req,res)=>{
   try{
     const { userId } = req.params;
     const user = await User.findById(userId);
-    res.json({
-      _id: user?._id,
-      name: user?.name,
-      email: user?.email,
-      mobile: user?.mobile,
-    });
+    res.json(user);
   }catch(err){
     throw new Error(err);
   }
