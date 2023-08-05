@@ -45,8 +45,8 @@ const getUsers = asyncHandler(async (req, res) => {
 //Get a single user
 const getUser = asyncHandler(async (req, res) => {
   try {
-    const { userId } = req.params;
-    const user = await User.findById(userId);
+    const _id  = req.user;
+    const user = await User.findById(_id);
     res.json(user);
   } catch (err) {
     throw new Error(err);
@@ -56,8 +56,8 @@ const getUser = asyncHandler(async (req, res) => {
 //Update a user's details
 const updateUser = asyncHandler(async (req, res) => {
   try {
-    const { userId } = req.params;
-    const user = await User.findByIdAndUpdate(userId, req.body, {
+    const _id = req.user;
+    const user = await User.findByIdAndUpdate(_id, req.body, {
       new: true,
     });
     res.json(user);
@@ -69,8 +69,8 @@ const updateUser = asyncHandler(async (req, res) => {
 //Delete a user
 const deleteUser = asyncHandler(async (req, res) => {
   try {
-    const { userId } = req.params;
-    const user = await User.findByIdAndDelete(userId);
+    const _id = req.user;
+    await User.findByIdAndDelete(_id);
     res.json("The user has been deleted");
   } catch (err) {
     throw new Error(err);
