@@ -7,10 +7,12 @@ const dotenv = require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 const authRoute = require("./routes/authRoute");
 const productRoute = require("./routes/productRoute");
+const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 
 dbConnect();
 
+app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());

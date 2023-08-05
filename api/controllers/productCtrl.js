@@ -1,10 +1,14 @@
 const Product = require("../models/productModel");
 const asyncHandler = require("express-async-handler");
 const validateMongodbID = require("../utils/validateMongodbID");
+const slugify = require("slugify");
 
 //Create a product
 const createProduct = asyncHandler(async (req, res) => {
   try {
+    if (req.body.title) {
+      req.body.slug = slugify(req.body.title);
+    }
     const product = await Product.create(req.body);
     res.json(product);
   } catch (err) {
@@ -14,7 +18,7 @@ const createProduct = asyncHandler(async (req, res) => {
 
 //Get a product's details
 const getProduct = asyncHandler(async (req, res) => {
-  const { productId } = req.params;
+  const {productId} = req.params;
   validateMongodbID(productId);
   try {
     const findProduct = await Product.findById(productId);
@@ -36,9 +40,12 @@ const getAllProducts = asyncHandler(async (req, res) => {
 
 //Updating a product's details
 const updateProduct = asyncHandler(async (req, res) => {
-  const { productId } = req.params;
+  const {productId} = req.params;
   validateMongodbID(productId);
   try {
+    if (req.body.title) {
+      req.body.slug = slugify(req.body.title);
+    }
     const updatedProduct = await Product.findByIdAndUpdate(
       productId,
       {
@@ -54,7 +61,7 @@ const updateProduct = asyncHandler(async (req, res) => {
 
 //Deleting a product
 const deleteProduct = asyncHandler(async (req, res) => {
-  const { productId } = req.params;
+  const {productId} = req.params;
   validateMongodbID(productId);
   try {
     await Product.findByIdAndDelete(productId);
