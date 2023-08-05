@@ -5,6 +5,7 @@ const asyncHandler = require("express-async-handler");
 //Create a new user
 const createUser = asyncHandler(async (req, res) => {
   const email = req.body.email;
+  console.log(req.body);
   const findUser = await User.findOne({ email: email });
   if (!findUser) {
     const newUser = await User.create(req.body);
@@ -20,38 +21,37 @@ const login = asyncHandler(async (req, res) => {
   const findUser = await User.findOne({ email: email });
   if (findUser && (await findUser.isPasswordMatched(password))) {
     res.json({
-      _id:findUser?._id,
-      name:findUser?.name,
-      email:findUser?.email,
-      mobile:findUser?.mobile,
-      token:generateToken(findUser?._id)
+      _id: findUser?._id,
+      name: findUser?.name,
+      email: findUser?.email,
+      mobile: findUser?.mobile,
+      token: generateToken(findUser?._id),
     });
-  }
-  else{
+  } else {
     throw new Error("Invalid credentials");
   }
 });
 
 //Get all users
-const getUsers = asyncHandler(async(req,res)=>{
-  try{
-   const users = await User.find();
-   res.json(users);
-  }catch(err){
+const getUsers = asyncHandler(async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (err) {
     throw new Error(err);
   }
-})
+});
 
 //Get a single user
-const getUser = asyncHandler(async(req,res)=>{
-  try{
+const getUser = asyncHandler(async (req, res) => {
+  try {
     const { userId } = req.params;
     const user = await User.findById(userId);
     res.json(user);
-  }catch(err){
+  } catch (err) {
     throw new Error(err);
   }
-})
+});
 
 //Update a user's details
 const updateUser = asyncHandler(async (req, res) => {
