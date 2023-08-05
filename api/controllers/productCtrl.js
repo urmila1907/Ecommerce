@@ -1,32 +1,43 @@
 const Product = require("../models/productModel");
 const asyncHandler = require("express-async-handler");
+const validateMongodbID = require("../utils/validateMongodbID");
 
 //Create a product
 const createProduct = asyncHandler(async (req, res) => {
-  const slug = req.body.slug;
-  const findProduct = await Product.findOne({ slug });
-  if (!findProduct) {
+  try {
     const product = await Product.create(req.body);
     res.json(product);
-  } else {
-    throw new Error("Product already exists");
+  } catch (err) {
+    throw new Error(err);
   }
 });
 
 //Get a product's details
 const getProduct = asyncHandler(async (req, res) => {
   const { productId } = req.params;
-  const findProduct = await Product.findById(productId);
-  if (!findProduct) {
-    throw new Error("No such product exists");
-  } else {
+  validateMongodbID(productId);
+  try {
+    const findProduct = await Product.findById(productId);
     res.json(findProduct);
+  } catch (err) {
+    throw new Error(err);
+  }
+});
+
+//Get all products
+const getAllProducts = asyncHandler(async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.json(products);
+  } catch (err) {
+    throw new Error(err);
   }
 });
 
 //Updating a product's details
 const updateProduct = asyncHandler(async (req, res) => {
   const { productId } = req.params;
+  validateMongodbID(productId);
   try {
     const updatedProduct = await Product.findByIdAndUpdate(
       productId,
@@ -37,13 +48,14 @@ const updateProduct = asyncHandler(async (req, res) => {
     );
     res.json(updatedProduct);
   } catch (err) {
-    throw new Error("No such product exists");
+    throw new Error(err);
   }
 });
 
 //Deleting a product
 const deleteProduct = asyncHandler(async (req, res) => {
   const { productId } = req.params;
+  validateMongodbID(productId);
   try {
     await Product.findByIdAndDelete(productId);
     res.json("The product has been deleted");
@@ -52,4 +64,10 @@ const deleteProduct = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { createProduct, getProduct, updateProduct, deleteProduct };
+module.exports = {
+  createProduct,
+  getProduct,
+  getAllProducts,
+  updateProduct,
+  deleteProduct,
+};

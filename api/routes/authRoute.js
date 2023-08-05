@@ -2,7 +2,7 @@ const express = require("express");
 const {
   createUser,
   login,
-  getUsers,
+  getAllUsers,
   getUser,
   deleteUser,
   updateUser,
@@ -16,7 +16,7 @@ const { authMiddleware, isAdmin } = require("../middlewares/authMiddleware");
 
 router.post("/register", createUser);
 router.post("/login", login);
-router.get("/users", getUsers);
+router.get("/users", getAllUsers);
 router.get("/refresh", handleRefreshToken);
 router.get("/logout", logout);
 

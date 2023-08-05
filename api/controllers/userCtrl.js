@@ -99,7 +99,7 @@ const logout = asyncHandler(async (req, res) => {
 });
 
 //Get all users
-const getUsers = asyncHandler(async (req, res) => {
+const getAllUsers = asyncHandler(async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
@@ -185,7 +185,7 @@ const unblockUser = asyncHandler(async (req, res) => {
 module.exports = {
   createUser,
   login,
-  getUsers,
+  getAllUsers,
   getUser,
   deleteUser,
   updateUser,
