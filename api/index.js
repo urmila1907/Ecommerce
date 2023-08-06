@@ -7,6 +7,7 @@ const dotenv = require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 const authRoute = require("./routes/authRoute");
 const productRoute = require("./routes/productRoute");
+const blogRoute = require("./routes/blogRoute");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 
@@ -20,6 +21,7 @@ app.use(cookieParser());
 //Routes
 app.use("/api/user", authRoute);
 app.use("/api/product", productRoute);
+app.use("/api/blog",blogRoute);
 
 //Middlewares
 app.use(notFound);
