@@ -5,17 +5,23 @@ const { errorHandler, notFound } = require("./middlewares/errorHandler");
 const dbConnect = require("./config/dbConnect");
 const dotenv = require("dotenv").config();
 const PORT = process.env.PORT || 4000;
-const authRouter = require("./routes/authRouter");
+const authRoute = require("./routes/authRoute");
+const productRoute = require("./routes/productRoute");
+const blogRoute = require("./routes/blogRoute");
+const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 
 dbConnect();
 
+app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //Routes
-app.use("/api/user", authRouter);
+app.use("/api/user", authRoute);
+app.use("/api/product", productRoute);
+app.use("/api/blog",blogRoute);
 
 //Middlewares
 app.use(notFound);
