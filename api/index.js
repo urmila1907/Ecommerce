@@ -16,6 +16,7 @@ const blogRoute = require("./routes/blogRoute");
 const prodCategoryRoute = require("./routes/prodCategoryRoute");
 const blogCategoryRoute = require("./routes/blogCategoryRoute");
 const brandRoute = require("./routes/brandRoute");
+const couponRoute = require("./routes/couponRoute");
 
 dbConnect();
 
@@ -31,6 +32,7 @@ app.use("/api/blog", blogRoute);
 app.use("/api/prodCategory", prodCategoryRoute);
 app.use("/api/blogCategory", blogCategoryRoute);
 app.use("/api/brand", brandRoute);
+app.use("/api/coupon",couponRoute);
 
 //Middlewares
 app.use(notFound);
