@@ -322,35 +322,13 @@ const addToCart = asyncHandler(async (req, res) => {
       cartTotal += products[i].price * products[i].quantity;
     }
     if (alreadyExistCart) {
-      let cartProducts = alreadyExistCart.products;
-      let newCartTotal = alreadyExistCart.cartTotal;
-
-      for (let pr of products) {
-        for (let cp of cartProducts) {
-          const prod = JSON.stringify(cp.product);
-          const product = JSON.stringify(pr.product);
-          if (
-            prod === product &&
-            pr.color === cp.color &&
-            pr.quantity === cp.quantity
-          ) {
-            cartProducts.pop(cp);
-            cartProducts.push(pr);
-          } else if (
-            prod === product &&
-            pr.color === cp.color &&
-            pr.quantity !== cp.quantity
-          ) {
-            pr.quantity += cp.quantity;
-            newCartTotal = newCartTotal + cp.price * (pr.quantity-cp.quantity);
-            cartProducts.pop(cp);
-            cartProducts.push(pr);
-          } else {
-            cartProducts.push(pr);
-            newCartTotal += cartTotal;
-          }
-        }
+      const cartProducts = alreadyExistCart.products;
+      const newCartTotal = alreadyExistCart.cartTotal;
+      for (let product of products) {
+        cartProducts.push(product);
       }
+
+      newCartTotal += cartTotal;
 
       const updateCart = await Cart.findOneAndUpdate(
         { orderBy: user.id },
@@ -381,6 +359,18 @@ const getUserCart = asyncHandler(async (req, res) => {
   }
 });
 
+//Emptying the cart
+const emptyCart = asyncHandler(async (req, res) => {
+  const id = req.user;
+  validateMongodbID(id);
+  try {
+    const findUserCart = await Cart.findByIdAndDelete(id);
+    res.json("This cart has been emptied");
+  } catch (err) {
+    throw new Error(err);
+  }
+});
+
 module.exports = {
   createUser,
   login,
@@ -400,4 +390,5 @@ module.exports = {
   saveAddress,
   addToCart,
   getUserCart,
+  emptyCart,
 };
