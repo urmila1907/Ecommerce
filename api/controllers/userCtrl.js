@@ -1,5 +1,7 @@
 const { generateToken } = require("../config/jwtToken");
 const User = require("../models/userModel");
+const Product = require("../models/productModel");
+const Cart = require("../models/cartModel");
 const asyncHandler = require("express-async-handler");
 const validateMongodbID = require("../utils/validateMongodbID");
 const { generateRefreshToken } = require("../config/refreshToken");
@@ -171,10 +173,10 @@ const saveAddress = asyncHandler(async (req, res) => {
   const id = req.user;
   validateMongodbID(id);
   try {
-     const updatedUser = await User.findByIdAndUpdate(id, req.body, {
-       new: true,
-     });
-     res.json(updatedUser);
+    const updatedUser = await User.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    res.json(updatedUser);
   } catch (err) {
     throw new Error(err);
   }
@@ -296,6 +298,89 @@ const getWishlist = asyncHandler(async (req, res) => {
   }
 });
 
+//Add to cart
+const addToCart = asyncHandler(async (req, res) => {
+  const { cart } = req.body;
+  const id = req.user;
+  validateMongodbID(id);
+  try {
+    const products = [];
+    const user = await User.findById(id);
+    const alreadyExistCart = await Cart.findOne({ orderBy: user.id });
+
+    for (let i = 0; i < cart.length; i++) {
+      let object = {};
+      object.product = cart[i]._id;
+      object.color = cart[i].color;
+      object.quantity = cart[i].quantity;
+      let getPrice = await Product.findById(cart[i]._id).select("price").exec();
+      object.price = getPrice.price;
+      products.push(object);
+    }
+    let cartTotal = 0;
+    for (let i = 0; i < products.length; i++) {
+      cartTotal += products[i].price * products[i].quantity;
+    }
+    if (alreadyExistCart) {
+      let cartProducts = alreadyExistCart.products;
+      let newCartTotal = alreadyExistCart.cartTotal;
+
+      for (let pr of products) {
+        for (let cp of cartProducts) {
+          const prod = JSON.stringify(cp.product);
+          const product = JSON.stringify(pr.product);
+          if (
+            prod === product &&
+            pr.color === cp.color &&
+            pr.quantity === cp.quantity
+          ) {
+            cartProducts.pop(cp);
+            cartProducts.push(pr);
+          } else if (
+            prod === product &&
+            pr.color === cp.color &&
+            pr.quantity !== cp.quantity
+          ) {
+            pr.quantity += cp.quantity;
+            newCartTotal = newCartTotal + cp.price * (pr.quantity-cp.quantity);
+            cartProducts.pop(cp);
+            cartProducts.push(pr);
+          } else {
+            cartProducts.push(pr);
+            newCartTotal += cartTotal;
+          }
+        }
+      }
+
+      const updateCart = await Cart.findOneAndUpdate(
+        { orderBy: user.id },
+        { products: cartProducts, cartTotal: newCartTotal },
+        { new: true }
+      );
+      res.json(updateCart);
+    } else {
+      const newCart = await Cart.create({ products, cartTotal, orderBy: id });
+      res.json(newCart);
+    }
+  } catch (err) {
+    throw new Error(err);
+  }
+});
+
+//Get a user's cart
+const getUserCart = asyncHandler(async (req, res) => {
+  const id = req.user;
+  validateMongodbID(id);
+  try {
+    const findCart = await Cart.findOne({ orderBy: id }).populate(
+      "products.product"
+    );
+    res.json(findCart);
+  } catch (err) {
+    throw new Error(err);
+  }
+});
+
 module.exports = {
   createUser,
   login,
@@ -313,4 +398,6 @@ module.exports = {
   resetPassword,
   getWishlist,
   saveAddress,
+  addToCart,
+  getUserCart,
 };
