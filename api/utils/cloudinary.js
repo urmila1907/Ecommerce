@@ -1,4 +1,5 @@
-import { v2 as cloudinary } from "cloudinary";
+// import { v2 as cloudinary } from "cloudinary";
+const cloudinary = require("cloudinary");
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -6,17 +7,9 @@ cloudinary.config({
   api_secret: process.env.API_SECRET,
 });
 
-cloudinary.v2.uploader.upload(
-  "https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg",
-  { public_id: "olympic_flag" },
-  function (error, result) {
-    console.log(result);
-  }
-);
-
 const cloudinaryUploadImg = async (fileToUploads) => {
   return new Promise((resolve) => {
-    cloudinary.v2.uploader.upload(fileToUploads, (result) => {
+    cloudinary.uploader.upload(fileToUploads, (result) => {
       resolve(
         {
           url: result.secure_url,
@@ -32,7 +25,7 @@ const cloudinaryUploadImg = async (fileToUploads) => {
 };
 const cloudinaryDeleteImg = async (fileToDelete) => {
   return new Promise((resolve) => {
-    cloudinary.v2.uploader.destroy(fileToDelete, (result) => {
+    cloudinary.uploader.destroy(fileToDelete, (result) => {
       resolve(
         {
           url: result.secure_url,
