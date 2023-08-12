@@ -1,11 +1,12 @@
 import React from "react";
-import { NavLink,Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   SearchSharp,
   LoopSharp,
   ShoppingCartOutlined,
   FavoriteBorderOutlined,
   Person2Outlined,
+  Dialpad,
 } from "@mui/icons-material";
 
 export default function Header() {
@@ -29,7 +30,7 @@ export default function Header() {
         <div className="container-xxl">
           <div className="d-flex flex-wrap justify-content-between align-items-center">
             <div className="d-flex flex-wrap justify-content-center align-items-center">
-              <div className="mx-1">
+              <div className="ml-1">
                 <h2>
                   <Link>Ecommerce</Link>
                 </h2>
@@ -50,7 +51,7 @@ export default function Header() {
               </div>
             </div>
             <div>
-              <div className="header-upper-links d-flex flex-wrap justify-content-between align-items-center mt-2 mx-3 gap-3">
+              <div className="header-upper-links d-flex flex-wrap justify-content-between align-items-center mt-3 mx-3 gap-3">
                 <div>
                   <Link>
                     <LoopSharp className="icon" />
@@ -85,26 +86,61 @@ export default function Header() {
           </div>
         </div>
       </header>
+
       <header className="header-bottom py-3">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
-              <div className="menu-bottom d-flex align-items-center">
-                <div></div>
+              <div className="menu-bottom d-flex flex-wrap align-items-center justify-content-between gap-3">
+                <div className="d-flex justify-content-center">
+                  <div className="dropdown">
+                    <button
+                      className="btn btn-secondary dropdown-toggle bg-transparent border-0"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <Dialpad className="icon" /> <span>Shop Categories</span>
+                    </button>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <Link className="dropdown-item text-white" to="">
+                          Fashion
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item text-white" to="">
+                          Electronics
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item text-white" to="">
+                          Footwear
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
                 <div className="menu-links">
-                  <div className="d-flex align-items-center gap-15">
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/store">Store</NavLink>
-                    <NavLink to="/blogs">Blogs</NavLink>
-                    <NavLink to="/contact">Contact</NavLink>
-                    
+                  <div className="d-flex flex-wrap align-items-center gap-5">
+                    <NavLink className="navlinks" to="/">
+                      Home
+                    </NavLink>
+                    <NavLink className="navlinks" to="/store">
+                      Store
+                    </NavLink>
+                    <NavLink className="navlinks" to="/blogs">
+                      Blogs
+                    </NavLink>
+                    <NavLink className="navlinks" to="/contact">
+                      Contact
+                    </NavLink>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </header>
     </>
   );
