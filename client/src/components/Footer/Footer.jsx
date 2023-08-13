@@ -1,4 +1,5 @@
 import React from "react";
+import "./footer.scss"
 import { Telegram, Instagram,YouTube,Twitter,LinkedIn,Pinterest} from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
