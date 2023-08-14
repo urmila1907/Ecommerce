@@ -9,7 +9,7 @@ import {
 } from "@mui/icons-material";
 import Marquee from "react-fast-marquee";
 import "./home.scss";
-import { BlogCard } from "../../components/Blog/BlogCard";
+import { BlogCard } from "../../components/BlogCard/BlogCard";
 
 export default function Home() {
   return (
