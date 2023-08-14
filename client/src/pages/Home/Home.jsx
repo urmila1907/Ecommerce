@@ -176,7 +176,7 @@ export default function Home() {
               <div className="category-1 d-flex flex-wrap justify-content-evenly align-items-center gap-2">
                 <div>
                   <img
-                    src="images/mobile.jpg"
+                    src="images/mobile-1.png"
                     alt="category-1-img"
                     className="mb-1"
                   />
@@ -194,7 +194,7 @@ export default function Home() {
                 </div>
                 <div>
                   <img
-                    src="images/tab1.jpg"
+                    src="images/tab-1.png"
                     alt="category-1-img"
                     className="mb-1"
                   />

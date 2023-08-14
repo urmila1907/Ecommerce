@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 import "./famousCard2.scss";
 
 export const FamousCard2 = () => {
