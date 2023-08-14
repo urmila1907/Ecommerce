@@ -126,35 +126,35 @@ export default function Home() {
           <div className="row">
             <div className="services d-flex flex-wrap gap-2 align-items-center justify-content-evenly">
               <div className="d-flex gap-2">
-                <LocalShippingOutlined className="icons" />
+                <LocalShippingOutlined />
                 <div>
                   <h6>Free Shipping</h6>
                   <p>For all orders above $50</p>
                 </div>
               </div>
               <div className="d-flex gap-2">
-                <CardGiftcard className="icons" />
+                <CardGiftcard />
                 <div>
                   <h6>Daily Surprise Offers</h6>
                   <p>Save up to 30% off</p>
                 </div>
               </div>
               <div className="d-flex gap-2">
-                <HeadsetMic className="icons" />
+                <HeadsetMic />
                 <div>
                   <h6>Support 24/7</h6>
                   <p>Shop with an expert</p>
                 </div>
               </div>
               <div className="d-flex gap-2">
-                <LocalOffer className="icons" />
+                <LocalOffer />
                 <div>
                   <h6>Affordable Prices</h6>
                   <p>Get Factory Direct Price</p>
                 </div>
               </div>
               <div className="d-flex gap-2">
-                <Payment className="icons" />
+                <Payment />
                 <div>
                   <h6>Secure Payments</h6>
                   <p>100% Protected Payment</p>
@@ -303,7 +303,7 @@ export default function Home() {
         </div>
       </section>
       <section className="blog-wrapper py-5 home-wrapper-2">
-        
+
       </section>
     </>
   );
