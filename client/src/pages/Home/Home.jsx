@@ -9,6 +9,7 @@ import {
 } from "@mui/icons-material";
 import Marquee from "react-fast-marquee";
 import "./home.scss";
+import { BlogCard } from "../../components/Blog/BlogCard";
 
 export default function Home() {
   return (
@@ -303,7 +304,26 @@ export default function Home() {
         </div>
       </section>
       <section className="blog-wrapper py-5 home-wrapper-2">
-
+        <div className="container-xxl">
+          <div className="row d-flex flex-wrap gap-3 mx-1 justify-content-evenly">
+            <h3>Featured Collection</h3>
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+          </div>
+        </div>
+      </section>
+      <section className="blog-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row d-flex flex-wrap gap-3 mx-1 justify-content-evenly">
+            <h3>Our Latest News</h3>
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+          </div>
+        </div>
       </section>
     </>
   );
