@@ -11,6 +11,7 @@ import Marquee from "react-fast-marquee";
 import "./home.scss";
 import { BlogCard } from "../../components/BlogCard/BlogCard";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
+import { SpecialProduct } from "../../components/SpecialProduct.js/SpecialProduct";
 
 export default function Home() {
   return (
@@ -270,7 +271,7 @@ export default function Home() {
       </section>
       <section className="featured-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
-          <div className="row d-flex flex-wrap gap-2 justify-content-evenly">
+          <div className="row d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
             <h3>Featured Collection</h3>
             <ProductCard />
             <ProductCard />
@@ -281,6 +282,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="special-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row d-flex flex-wrap gap-2 justify-content-evenly">
+            <h3>Special Products</h3>
+            <SpecialProduct />
+            <SpecialProduct />
+            <SpecialProduct />
+            <SpecialProduct />
+            <SpecialProduct />
+            <SpecialProduct />
+          </div>
+        </div>
+      </div>
       <section className="marquee-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">

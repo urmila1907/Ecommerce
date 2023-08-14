@@ -1,5 +1,5 @@
 .card {
-  width: 16rem;
+  max-width: 16rem;
   position: relative;
 
   .card-img-top {
@@ -28,6 +28,10 @@
     display: none;
   }
 
+  .content {
+    padding: 0.6rem;
+  }
+
   &:hover {
     .action-bar {
       display: unset;
@@ -39,7 +43,7 @@
       display: block;
     }
   }
-  .price{
+  .price {
     font-weight: 500;
   }
 }
