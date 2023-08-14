@@ -12,6 +12,8 @@ import "./home.scss";
 import { BlogCard } from "../../components/BlogCard/BlogCard";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
 import { SpecialProduct } from "../../components/SpecialProduct.js/SpecialProduct";
+import { FamousCard1 } from "../../components/FamousCard1/FamousCard1";
+import { FamousCard2 } from "../../components/FamousCard2/FamousCard2";
 
 export default function Home() {
   return (
@@ -279,6 +281,16 @@ export default function Home() {
             <ProductCard />
             <ProductCard />
             <ProductCard />
+          </div>
+        </div>
+      </section>
+      <section className="famous-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row d-flex gap-2 justify-content-evenly align-items-center">
+            <FamousCard1 />
+            <FamousCard2 />
+            <FamousCard2 />
+            <FamousCard2 />
           </div>
         </div>
       </section>
