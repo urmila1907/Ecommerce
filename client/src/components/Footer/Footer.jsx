@@ -59,35 +59,35 @@ export default function Footer() {
                     alt="social icons"
                     className="text-white mx-1"
                   >
-                    <YouTube />
+                    <YouTube className="icons" />
                   </a>
                   <a
                     href="https://instagram.com/"
                     alt="social icons"
                     className="text-white mx-1"
                   >
-                    <Instagram />
+                    <Instagram className="icons" />
                   </a>
                   <a
                     href="https://twitter.com/"
                     alt="social icons"
                     className="text-white mx-1"
                   >
-                    <Twitter />
+                    <Twitter className="icons" />
                   </a>
                   <a
                     href="https://www.linkedin.com/"
                     alt="social icons"
                     className="text-white mx-1"
                   >
-                    <LinkedIn />
+                    <LinkedIn className="icons" />
                   </a>
                   <a
                     href="https://in.pinterest.com/"
                     alt="social icons"
                     className="text-white mx-1"
                   >
-                    <Pinterest />
+                    <Pinterest className="icons" />
                   </a>
                 </div>
               </div>

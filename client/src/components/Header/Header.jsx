@@ -46,7 +46,7 @@ export default function Header() {
                     aria-describedby="basic-addon2"
                   />
                   <span className="input-group-text py-2" id="basic-addon2">
-                    <SearchSharp className="icon" />
+                    <SearchSharp className="icons" />
                   </span>
                 </div>
               </div>
@@ -55,26 +55,26 @@ export default function Header() {
               <div className="header-upper-links d-flex flex-wrap justify-content-between align-items-center mt-3 mx-3 gap-3">
                 <div>
                   <Link>
-                    <LoopSharp className="icon" />
+                    <LoopSharp className="icons" />
                     Compare Products
                   </Link>
                 </div>
                 <div>
                   <Link>
-                    <FavoriteBorderOutlined className="icon" />
+                    <FavoriteBorderOutlined className="icons" />
                     Wishlist
                   </Link>
                 </div>
                 <div>
                   <Link>
-                    <Person2Outlined className="icon" />
+                    <Person2Outlined className="icons" />
                     Log in
                   </Link>
                 </div>
                 <div>
                   <Link className="d-flex">
                     <div className="d-flex ">
-                      <ShoppingCartOutlined className="icon" />
+                      <ShoppingCartOutlined className="icons" />
                       <span className="cart-item-border">
                         <span className="cart-item">0</span>
                       </span>
@@ -101,7 +101,7 @@ export default function Header() {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      <Dialpad className="icon" /> <span>Shop Categories</span>
+                      <Dialpad className="icons" /> <span>Shop Categories</span>
                     </button>
                     <ul className="dropdown-menu">
                       <li>
