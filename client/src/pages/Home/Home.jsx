@@ -268,11 +268,24 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="featured-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row d-flex flex-wrap gap-2 justify-content-evenly">
+            <h3>Featured Collection</h3>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
       <section className="marquee-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
-              <div className="marquee-inner-wrapper card-wrapper">
+              <div className="marquee-inner-wrapper card-wrapper bg-white">
                 <Marquee className="d-flex">
                   <div className="mx-4">
                     <img src="images/brand-01.png" alt="brand" />
@@ -301,19 +314,6 @@ export default function Home() {
                 </Marquee>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="blog-wrapper py-5 home-wrapper-2">
-        <div className="container-xxl">
-          <div className="row d-flex flex-wrap gap-2 justify-content-evenly">
-            <h3>Featured Collection</h3>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
           </div>
         </div>
       </section>

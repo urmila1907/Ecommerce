@@ -7,18 +7,30 @@ import {
   ShoppingBagOutlined,
   Visibility,
 } from "@mui/icons-material";
+import {Link} from "react-router-dom";
 
 export const ProductCard = () => {
   return (
     <>
-      <div className="card">
-        <img src="images/watch.jpg" className="card-img-top" alt="blog-img" />
+      <Link className="card">
+        <div className="product-image">
+          <img
+            src="images/watch.jpg"
+            className="card-img-top"
+            alt="blog-img"
+          />
+          <img
+            src="images/watch.avif"
+            className="card-img-top"
+            alt="blog-img"
+          />
+        </div>
+        <FavoriteBorderOutlined className="icons wishlist-icon" />
         <div className="action-bar">
           <div className="d-flex flex-column">
-            <FavoriteBorderOutlined className="icons"/>
-            <Shuffle className="icons"/>
-            <Visibility className="icons"/>
-            <ShoppingBagOutlined className="icons"/>
+            <Shuffle className="icons" />
+            <Visibility className="icons" />
+            <ShoppingBagOutlined className="icons" />
           </div>
         </div>
         <div>
@@ -33,7 +45,7 @@ export const ProductCard = () => {
           />
           <p className="price">$100.00</p>
         </div>
-      </div>
+      </Link>
     </>
   );
 };
