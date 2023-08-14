@@ -10,6 +10,7 @@ import {
 import Marquee from "react-fast-marquee";
 import "./home.scss";
 import { BlogCard } from "../../components/BlogCard/BlogCard";
+import { ProductCard } from "../../components/ProductCard/ProductCard";
 
 export default function Home() {
   return (
@@ -190,7 +191,7 @@ export default function Home() {
                 </div>
                 <div>
                   <img
-                    src="images/tab.jpg"
+                    src="images/tab1.jpg"
                     alt="category-1-img"
                     className="mb-1"
                   />
@@ -305,18 +306,20 @@ export default function Home() {
       </section>
       <section className="blog-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
-          <div className="row d-flex flex-wrap gap-3 mx-1 justify-content-evenly">
+          <div className="row d-flex flex-wrap gap-2 justify-content-evenly">
             <h3>Featured Collection</h3>
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
           </div>
         </div>
       </section>
       <section className="blog-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
-          <div className="row d-flex flex-wrap gap-3 mx-1 justify-content-evenly">
+          <div className="row d-flex flex-wrap gap-2 justify-content-evenly">
             <h3>Our Latest News</h3>
             <BlogCard />
             <BlogCard />
