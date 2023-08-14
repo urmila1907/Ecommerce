@@ -285,7 +285,7 @@ export default function Home() {
       <div className="special-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row d-flex flex-wrap gap-2 justify-content-evenly">
-            <h3>Special Products</h3>
+            <h3>Our Special Products</h3>
             <SpecialProduct />
             <SpecialProduct />
             <SpecialProduct />
@@ -295,6 +295,17 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <section className="popular-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
+            <h3>Our Popular Products</h3>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
       <section className="marquee-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
