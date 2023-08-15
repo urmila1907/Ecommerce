@@ -1,10 +1,11 @@
 .card {
-  width: 16rem;
+  max-width: 16rem;
   position: relative;
 
   .card-img-top {
     width: 13rem;
     height: 13rem;
+    object-fit: cover;
   }
   .brand {
     color: var(--color-5);
@@ -12,13 +13,38 @@
   .product-title {
     color: var(--color-7);
   }
-  .action-bar {
+
+  .wishlist-icon {
     position: absolute;
     top: 0.8rem;
     right: 0.9rem;
+  }
+  .action-bar {
+    position: absolute;
+    top: 2.5rem;
+    right: 0.9rem;
     display: none;
   }
-    &:hover .action-bar{
+  .product-image > img:last-child {
+    display: none;
+  }
+
+  .content {
+    padding: 0.6rem;
+  }
+
+  &:hover {
+    .action-bar {
       display: unset;
     }
+    .product-image > img:nth-child(1) {
+      display: none;
+    }
+    .product-image > img:last-child {
+      display: block;
+    }
+  }
+  .price {
+    font-weight: 500;
+  }
 }

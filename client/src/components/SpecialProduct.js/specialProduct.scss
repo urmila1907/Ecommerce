@@ -1,0 +1,57 @@
+.card {
+  width: 30rem;
+  margin: 0;
+  padding: 0.6rem;
+
+  .card-left {
+    height: 33%;
+    width: 33%;
+
+    .discount {
+      background-color: var(--star-color);
+      padding: 0.2rem;
+      border-radius: 30%;
+      position: absolute;
+      top: 1rem;
+      left: 0.6rem;
+    }
+
+    .card-img-top {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      object-fit: cover;
+    }
+    .wishlist-icon {
+      top: 1rem;
+      right: 0.8rem;
+    }
+    .action-bar {
+      top: 2.5rem;
+      right: 0.8rem;
+    }
+  }
+  .card-right {
+    width: 67%;
+
+    .brand {
+      color: var(--color-5);
+    }
+    .product-title {
+      color: var(--color-7);
+      font-weight: 500;
+    }
+    .progress {
+      margin-bottom: 1rem;
+      margin-top: -0.7rem;
+      background-color: whitesmoke;
+
+      .progress-bar {
+        background-color: blue;
+      }
+    }
+    .price-p {
+      color: var(--color-5);
+    }
+  }
+}

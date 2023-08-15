@@ -11,6 +11,9 @@ import Marquee from "react-fast-marquee";
 import "./home.scss";
 import { BlogCard } from "../../components/BlogCard/BlogCard";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
+import { SpecialProduct } from "../../components/SpecialProduct.js/SpecialProduct";
+import { FamousCard1 } from "../../components/FamousCard1/FamousCard1";
+import { FamousCard2 } from "../../components/FamousCard2/FamousCard2";
 
 export default function Home() {
   return (
@@ -173,7 +176,7 @@ export default function Home() {
               <div className="category-1 d-flex flex-wrap justify-content-evenly align-items-center gap-2">
                 <div>
                   <img
-                    src="images/mobile.jpg"
+                    src="images/mobile-1.png"
                     alt="category-1-img"
                     className="mb-1"
                   />
@@ -191,7 +194,7 @@ export default function Home() {
                 </div>
                 <div>
                   <img
-                    src="images/tab1.jpg"
+                    src="images/tab-1.png"
                     alt="category-1-img"
                     className="mb-1"
                   />
@@ -268,11 +271,58 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="featured-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
+            <h3>Featured Collection</h3>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
+      <section className="famous-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row d-flex gap-2 justify-content-evenly align-items-center">
+            <FamousCard1 />
+            <FamousCard2 />
+            <FamousCard2 />
+            <FamousCard2 />
+          </div>
+        </div>
+      </section>
+      <div className="special-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row d-flex flex-wrap gap-2 justify-content-evenly">
+            <h3>Our Special Products</h3>
+            <SpecialProduct />
+            <SpecialProduct />
+            <SpecialProduct />
+            <SpecialProduct />
+            <SpecialProduct />
+            <SpecialProduct />
+          </div>
+        </div>
+      </div>
+      <section className="popular-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
+            <h3>Our Popular Products</h3>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
       <section className="marquee-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
-              <div className="marquee-inner-wrapper card-wrapper">
+              <div className="marquee-inner-wrapper card-wrapper bg-white">
                 <Marquee className="d-flex">
                   <div className="mx-4">
                     <img src="images/brand-01.png" alt="brand" />
@@ -301,19 +351,6 @@ export default function Home() {
                 </Marquee>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="blog-wrapper py-5 home-wrapper-2">
-        <div className="container-xxl">
-          <div className="row d-flex flex-wrap gap-2 justify-content-evenly">
-            <h3>Featured Collection</h3>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
           </div>
         </div>
       </section>
