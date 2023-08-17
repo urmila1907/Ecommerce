@@ -4,6 +4,7 @@ import { BreadCrumb } from "../../components/BreadCrumb/BreadCrumb";
 import { Meta } from "../../components/Meta";
 import { Menu } from "@mui/icons-material";
 import ReactStars from "react-rating-stars-component";
+import {ProductCard} from "../../components/ProductCard/ProductCard"
 
 export const Store = () => {
   return (
@@ -13,7 +14,7 @@ export const Store = () => {
       <div className="store-wrapper home-wrapper-2 py-5">
         <div className="container-xxl">
           <div className="d-flex gap-2">
-            <div className="filter d-flex flex-column flex-wrap gap-2 justify-content-evenly">
+            <div className="filter col-3 d-flex flex-column justify-content-between gap-1">
               <div className="filter-card">
                 <h5 className="filter-title">Shop By Categories</h5>
                 <ul className="category-list d-flex flex-column flex-wrap gap-2 justify-content-start align-items-start">
@@ -237,39 +238,55 @@ export const Store = () => {
                 </div>
               </div>
             </div>
-            <div className="filtered-products">
-              <div className="d-flex justify-content-between flex-wrap gap-2 align-items center">
-                <div className="filter-sort-grid">
-                  <div className="d-flex align-items-center gap-2">
-                    <p className="mb-0">Sort By:</p>
-                    <select name="" id="" className="form-control form-select">
-                      <option value="manual">Featured</option>
-                      <option value="best selling" selected>
-                        Best Selling
-                      </option>
-                      <option value="title-ascending">A-Z</option>
-                      <option value="title-descending">Z-A</option>
-                      <option value="price-ascending">
-                        Price - Low to High
-                      </option>
-                      <option value="price-descending">
-                        Price - High to Low
-                      </option>
-                      <option value="created-descending">
-                        Latest to Oldest
-                      </option>
-                      <option value="created-ascending">
-                        Oldest to Latest
-                      </option>
-                    </select>
+            <div className="filtered-products col-8">
+              <div className="mb-2">
+                <div className="d-flex justify-content-between flex-wrap gap-2 align-items center">
+                  <div className="filter-sort-grid">
+                    <div className="d-flex align-items-center gap-2">
+                      <p className="mb-0">Sort By:</p>
+                      <select
+                        name=""
+                        id=""
+                        className="form-control form-select"
+                      >
+                        <option value="manual">Featured</option>
+                        <option value="best selling" selected>
+                          Best Selling
+                        </option>
+                        <option value="title-ascending">A-Z</option>
+                        <option value="title-descending">Z-A</option>
+                        <option value="price-ascending">
+                          Price - Low to High
+                        </option>
+                        <option value="price-descending">
+                          Price - High to Low
+                        </option>
+                        <option value="created-descending">
+                          Latest to Oldest
+                        </option>
+                        <option value="created-ascending">
+                          Oldest to Latest
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="filter-grid-order d-flex flex-wrap align-items-center gap-2">
+                    <span>21 products</span>
+                    <Menu className="icons" />
+                    <Menu className="icons" />
+                    <Menu className="icons" />
                   </div>
                 </div>
-                <div className="filter-grid-order d-flex flex-wrap align-items-center gap-2">
-                  <span>21 products</span>
-                  <Menu className="icons" />
-                  <Menu className="icons" />
-                  <Menu className="icons" />
-                </div>
+              </div>
+              <div className="d-flex flex-wrap gap-2 align-items-center justify-content-between">
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
               </div>
             </div>
           </div>
