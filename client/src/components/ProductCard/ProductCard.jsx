@@ -7,13 +7,13 @@ import {
   ShoppingBagOutlined,
   Visibility,
 } from "@mui/icons-material";
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export const ProductCard = () => {
   return (
     <>
-      <div className="card">
-        {/* <Link> */}
+      <Link>
+        <div className="card">
           <div className="product-image">
             <img
               src="images/watch.jpg"
@@ -46,8 +46,8 @@ export const ProductCard = () => {
             />
             <p className="price">$100.00</p>
           </div>
-        {/* </Link> */}
-      </div>
+        </div>
+      </Link>
     </>
   );
 };
