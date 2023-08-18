@@ -1,8 +1,6 @@
 .store-wrapper {
   .filter {
-    max-width: 33%;
-    flex-grow: 2;
-    flex-shrink: 1;
+    min-width: 9rem;
 
     .filter-card {
       background-color: white;
@@ -69,19 +67,11 @@
     }
   }
   .filtered-products {
-    flex-grow: 1;
-    flex-shrink: 0.5;
-    margin-left: 0.7rem;
+    min-width: 5rem;
+    margin: 0 0.4rem;
     padding: 1rem;
     background-color: white;
-
-    .filter-sort-grid {
-      border-radius: 0.2rem;
-      background-color: white;
-    }
-    .filter-grid-order {
-      background-color: white;
-    }
+    border-radius: 0.8rem;
   }
 }
 input::-webkit-outer-spin-button,
@@ -92,4 +82,25 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   appearance: textfield;
+}
+
+@media screen and (max-width: 470px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .filter {
+    width: fit-content;
+    align-self: center;
+  }
+  .filtered-products {
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .filtered-products {
+    width: fit-content;
+  }
+
 }
