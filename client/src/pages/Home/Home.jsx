@@ -273,8 +273,8 @@ export default function Home() {
       </section>
       <section className="featured-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
-          <div className="row d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
-            <h3>Featured Collection</h3>
+          <h3>Featured Collection</h3>
+          <div className="d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
             <ProductCard />
             <ProductCard />
             <ProductCard />
@@ -309,8 +309,8 @@ export default function Home() {
       </div>
       <section className="popular-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
-          <div className="row d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
-            <h3>Our Popular Products</h3>
+          <h3>Our Popular Products</h3>
+          <div className="d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
             <ProductCard />
             <ProductCard />
             <ProductCard />
