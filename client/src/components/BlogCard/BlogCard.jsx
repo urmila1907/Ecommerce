@@ -6,7 +6,7 @@ export const BlogCard = () => {
   return (
     <>
       <div className="card">
-        <img src="images/blog-1.jpg" className="card-img-top" alt="blog-img" />
+        <img src="images/blog-1.jpg" className="card-img-top img-fluid" alt="blog-img" />
         <div className="card-body">
           <h6>11 May, 2023</h6>
           <h5 className="card-title">A Beautiful Sunday Morning Renaissance</h5>
