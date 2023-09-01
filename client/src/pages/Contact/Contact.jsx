@@ -25,7 +25,7 @@ export default function Contact() {
               ></iframe>
             </div>
             <div className="col-12 mt-5">
-              <div className="contact-inner-wrapper d-flex  align-items-center justify-content-between">
+              <div className="contact-inner-wrapper d-flex justify-content-between">
                 <div className="mx-2">
                   <h4 className="contact-title ">Contact us</h4>
                   <form action="" className="d-flex flex-column gap-2">
@@ -69,21 +69,23 @@ export default function Contact() {
                   <h4 className="contact-title ">Get in touch with us</h4>
                   <div>
                     <ul className="ps-0 contact-info">
-                      <li className="mb-3">
+                      <li className="mb-3 d-flex align-items-center gap-1">
                         <Home />
-                        <address>
-                          23,Brooklyn Street, New York, USA
-                        </address>
+                        <address className="mb-0">23,Brooklyn Street, New York, USA</address>
                       </li>
-                      <li className="mb-3">
+                      <li className="mb-3 d-flex align-items-center gap-1">
                         <Call />
-                        
+                        <a href="tel:+91 1234567890">+91 1234567890</a>
                       </li>
-                      <li className="mb-3">
-                        <EmailOutlined />
+                      <li className="mb-3 d-flex align-items-center gap-1">
+                        <EmailOutlined  />
+                        <a href="mailto:ecommerce@email.com">
+                          ecommerce@email.com
+                        </a>
                       </li>
-                      <li className="mb-3">
-                        <InfoOutlined />
+                      <li className="mb-3 d-flex align-items-center gap-1">
+                        <InfoOutlined  />
+                        <p className="mb-0">Monday - Friday 10PM</p>
                       </li>
                     </ul>
                   </div>
