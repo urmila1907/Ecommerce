@@ -54,7 +54,7 @@ export default function Header() {
             <div>
               <div className="header-upper-links d-flex flex-wrap justify-content-between align-items-center mt-3 mx-3 gap-3">
                 <div>
-                  <Link>
+                  <Link to="/compare-products">
                     <LoopSharp className="icons" />
                     Compare Products
                   </Link>

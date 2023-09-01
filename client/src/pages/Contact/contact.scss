@@ -1,0 +1,29 @@
+.contact-wrapper {
+  .contact-inner-wrapper {
+    border-radius: 10px;
+    background-color: white;
+    padding: 1rem;
+    gap: 1rem;
+    > div {
+      width: 48%;
+    }
+    .form-control{
+      background-color: var(--color-6);
+      border-radius: 0.6rem;
+      border-color: transparent;
+      padding: 0.5rem;
+    }
+    .contact-info{
+      list-style: none;
+    }
+  }
+}
+@media screen and (max-width: 405px) {
+  .contact-inner-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}

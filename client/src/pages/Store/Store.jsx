@@ -26,7 +26,6 @@ export const Store = () => {
               </div>
               <div className="filter-card mb-3">
                 <h4 className="filter-title">Filter By</h4>
-                {/* <div className="availability"> */}
                 <h6 className="filter-title">Availability</h6>
                 <input
                   type="checkbox"
@@ -50,7 +49,6 @@ export const Store = () => {
                   Out Of Stock(5)
                 </label>
                 <br />
-                {/* </div> */}
                 <h6 className="filter-title">Price</h6>
                 <div className="d-flex flex-wrap gap-1 justify-content-between align-items-center">
                   <div className="d-flex gap-1 align-items-center">
